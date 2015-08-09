@@ -1,0 +1,17 @@
+@import '_vars';
+@import '_reset';
+@import '_grid';
+@import '_base';
+
+#heading {
+  text-align: center;
+}
+
+#row-contacts {
+  background-color: $color2;
+  border-radius: $gutter;
+}
+
+.selectbox {
+  margin: $gutter auto;
+}

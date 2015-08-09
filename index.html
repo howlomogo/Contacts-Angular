@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Contacts App</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>  <script src="app.js"></script>
+</head>
+
+<body ng-controller="MainCtrl">
+  <div class="main-container">
+    <div id="heading" class="row">
+      <div class="col-12">
+        <h1>Contact Details Application</h1>
+        <h4>"Simple test project by Matt"</h4>
+      </div>
+    </div>
+    <div class="row center">
+      <select class="selectbox" ng-model="orderList">
+        <option value="name">Name</option>
+        <option value ="age">Age</option>
+      </select>
+    </div>
+    <div id="row-contacts" class="row mb-large">
+      <div class="col-4"> <!-- left col containing drop down for contacts -->
+        <h3>Contacts</h3>
+        <hr>
+        <ul>
+          <li ng-repeat="item in contacts | orderBy: orderList" ng-click="contactdetails(item)">{{item.name}}</li>
+        </ul>
+      </div>
+      <div class="col-8">
+        <h3>Contact Details</h3>
+        <hr>
+        <h4>Name: {{currentDetails.name}}</h4>
+        <h4>Age: {{currentDetails.age}}</h4>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
